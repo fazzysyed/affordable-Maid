@@ -47,7 +47,8 @@ export default class Main extends Component {
           }}>
                    <View style={{flexDirection: 'row', marginTop: 5,alignSelf:"center"}}>
                 <Image
-                  source={{uri:"https://affordablemaidsservice.com/wp-content/uploads/2021/08/affordable-maids.png"}}
+              source={require("./Assets/affordable-maids.png")}
+
                   style={{
                     height: 100,
                     width: "100%",

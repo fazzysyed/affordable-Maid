@@ -10,18 +10,17 @@ import {
 } from 'react-native';
 import WebView from 'react-native-webview';
 
-const WebViewIos = () => {
+const WebViewIos = ({navigation}) => {
   const [canGoBack, setCanGoBack] = useState(false);
   const [canGoForward, setCanGoForward] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
 
   const webviewRef = useRef(null);
 
-const  backButtonHandler = () => {
-    console.log('Hello');
-    if (webviewRef.current) webviewRef.current.goBack();
-  };
-
+  const  backButtonHandler = () => {
+    navigation.goBack()
+      };
+    
  const frontButtonHandler = () => {
     if (webviewRef.current) webviewRef.current.goForward();
   };
@@ -30,7 +29,7 @@ const  backButtonHandler = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.flexContainer}>
         <WebView
-          source={{uri: 'https://affordablemaidsservice.com/account'}}
+          source={{uri: "https://affordablemaidsservice.com/maid-login"}}
           startInLoadingState={true}
           renderLoading={() => (
             <ActivityIndicator

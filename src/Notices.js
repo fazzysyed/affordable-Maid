@@ -10,19 +10,19 @@ import {
 } from 'react-native';
 import WebView from 'react-native-webview';
 
-const WebViewIos = () => {
+const WebViewIos = ({navigation}) => {
   const [canGoBack, setCanGoBack] = useState(false);
   const [canGoForward, setCanGoForward] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
 
   const webviewRef = useRef(null);
 
-  backButtonHandler = () => {
-    console.log('Hello');
-    if (webviewRef.current) webviewRef.current.goBack();
-  };
+  const backButtonHandler = () => {
+    navigation.goBack()
+      };
+    
 
-  frontButtonHandler = () => {
+   frontButtonHandler = () => {
     if (webviewRef.current) webviewRef.current.goForward();
   };
   return (
